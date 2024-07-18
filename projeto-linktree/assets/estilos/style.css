@@ -1,0 +1,33 @@
+@charset "UTF - 8";
+:root {
+    --cor0: hsl(0, 0%, 20%);
+    --cor1: hsl(0, 0%, 12%);
+    --cor2: hsl(0, 0%, 8%);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html , body {
+    background-color: var(--cor2);
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    background-color: var(--cor1);
+    width: 350px;
+    padding: 10px;
+    text-align: center;
+}
+main img {
+    height: 150px;
+    width: 150px;
+}
+main li {
+    list-style-type: none;
+}
+
