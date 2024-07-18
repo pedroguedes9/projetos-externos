@@ -17,7 +17,7 @@ html , body {
     justify-content: center;
     align-items: center;
 }
-section {
+main {
     background-color: var(--cor1);
     width: 350px;
     padding: 10px;
