@@ -6,32 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teste</title>
     <style>
-        div {
-            width: 170px;
-            margin: 0 auto;
-        }
-        div#digitos1 {
-            float: left;
-            position: absolute;
-            left: 35%;
-        }
-        div#digitos2 {
-            float: right;
-            position: absolute;
-            right: 35%;
-        }
-        button {
-            height: 50px;
-            width: 50px;
+        @media screen and (max-width:639px) {
+            div {
+                margin: 0 auto;
+            }
+            div#digitos1 {
+                position: relative;
+                right: 125px;
+                width: 120px;
+            }
+            div#digitos2 {
+                position: relative;
+                left: 125px;
+                bottom: 140px;
+                width: 120px;
+            }
+            div#operadores {
+                position: relative;
+                bottom: 265px;
+                width: 120px;
+            }
+            div#display {
+                position: relative;
+                bottom: 280px;
+            }
+            button {
+                height: 35px;
+                width: 35px;
+                cursor: pointer;
+            }
+            button:active {
+                background-color: rgb(255, 0, 0);
+                
+            }
             
+            h1, h2{
+                text-align: center;
+                position: relative;
+                right: 4px;
+                top: 10px;
+            }
         }
-        button:hover {
-            background-color: rgb(255, 0, 0);
+        @media screen and (min-width:640px ) {
+            
+            div {
+                width: 170px;
+                margin: 0 auto;
+            }
+            div#digitos1 {
+                position: relative;
+                right: 200px;
+            }
+            div#digitos2 {
+                position: relative;
+                left: 200px;
+                bottom: 200px;
+            }
+            div#operadores {
+                position: relative;;
+                bottom: 370px;
+            }
+            button {
+                height: 50px;
+                width: 50px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: rgb(255, 0, 0);
+            }
+            h1, h2{
+                text-align: center;
+            }
+            div#display {
+                position: relative;
+                bottom: 350px;
+            }
         }
-        h1, h2{
-            text-align: center;
-        }
-
     </style>
 </head>
 
@@ -71,10 +121,12 @@
         <button id="calcular">calcular</button>
         <button id="reset">reset</button>
     </div>
-    <h2 id="digito1">Digito 1: 0</h2>
-    <h2 id="digito2">Digito 2: 0</h2>
-    <h2 id="operador">Operador: +</h2>
-    <h2 id="resultado">Resultado: 0</h2>
+    <div id="display">
+        <h2 id="digito1">Digito 1: 0</h2>
+        <h2 id="digito2">Digito 2: 0</h2>
+        <h2 id="operador">Operador: +</h2>
+        <h2 id="resultado">Resultado: 0</h2>
+    </div>
         <script src="script.js"></script>
     
 </body>
