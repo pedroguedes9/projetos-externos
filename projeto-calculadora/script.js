@@ -224,12 +224,12 @@ function novoDigito1() { //quando fizer a operação, o resultado dessa operaç�
 
 function Calculo() {
     if (op === "*") {
-        displayCalculo.innerHTML = `${number1} x ${number2}`
+        displayCalculo.innerHTML = `${number1} x ${number2} = ${resultado}`	
     }
     else if (op === "/") {
-        displayCalculo.innerHTML = `${number1} ÷ ${number2}`
+        displayCalculo.innerHTML = `${number1} ÷ ${number2} = ${resultado}`
     }
     else {
-        displayCalculo.innerHTML = `${number1} ${op} ${number2}`
+        displayCalculo.innerHTML = `${number1} ${op} ${number2} = ${resultado}`
     }
 }
