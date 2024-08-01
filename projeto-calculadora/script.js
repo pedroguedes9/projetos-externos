@@ -3,7 +3,7 @@ let number1 = 0
 let number2 = 0
 let op = "+"
 let resultado = 0
-const botaoResultado = document.querySelector("#resultado") //pegando o botão de resultado para mostrar o resultado
+const displayResultado = document.querySelector("#resultado") //pegando o botão de resultado para mostrar o resultado
 const displayDigito1 = document.querySelector("#digito1")
 const displayDigito2 = document.querySelector("#digito2")
 const displayOperador = document.querySelector("#operador")
@@ -156,25 +156,25 @@ document.querySelector("#operadores > #calcular").addEventListener('click', func
         case "*":
             resultado = number1 * number2
             console.log(resultado)
-            botaoResultado.innerHTML = `Resultado: ${resultado}`
+            displayResultado.innerHTML = `Resultado: ${resultado}`
             reset()
             break;
         case "+":
             resultado = number1 + number2
             console.log(resultado)
-            botaoResultado.innerHTML = `Resultado: ${resultado}`
+            displayResultado.innerHTML = `Resultado: ${resultado}`
             reset()
             break;
         case "-":
             resultado = number1 - number2
             console.log(resultado)
-            botaoResultado.innerHTML = `Resultado: ${resultado}`
+            displayResultado.innerHTML = `Resultado: ${resultado}`
             reset()
             break;
         case "/":
             resultado = number1 / number2
             console.log(resultado)
-            botaoResultado.innerHTML = `Resultado: ${resultado}`
+            displayResultado.innerHTML = `Resultado: ${resultado}`
             reset()
             break
         default:
@@ -185,6 +185,15 @@ document.querySelector("#operadores > #calcular").addEventListener('click', func
 })
 
 //botão de reset
-document.querySelector("#operadores > #reset").addEventListener('click', reset)
+document.querySelector("#operadores > #reset").addEventListener('click', function() {
+    number1 = 0
+    number2 = 0
+    op = "+"
+    displayDigito1.innerHTML = `Digito 1: 0`
+    displayDigito2.innerHTML = `Digito 2: 0`
+    displayOperador.innerHTML = `Operador: +`
+    displayResultado.innerHTML = `Resultado: 0`
+    return number1, number2, op
+})
 
 
