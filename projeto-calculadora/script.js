@@ -120,22 +120,22 @@ document.querySelector('#digitos2 > #number0').addEventListener('click', functio
 //o código abaixo serve para pegar qual é o operador
 document.querySelector("#operadores > #multiplicar").addEventListener('click', function() {
     op = "*"
-    displayOperador.innerHTML = `Operador: ${op}`
+    displayOperador.innerHTML = `Operador: X`
     return op 
 })
 document.querySelector("#operadores > #div").addEventListener('click', function() {
     op = "/"
-    displayOperador.innerHTML = `Operador: ${op}`
+    displayOperador.innerHTML = `Operador: ÷`
     return op 
 })
 document.querySelector("#operadores > #minus").addEventListener('click', function() {
     op = "-"
-    displayOperador.innerHTML = `Operador: ${op}`
+    displayOperador.innerHTML = `Operador: -`
     return op 
 })
 document.querySelector("#operadores > #plus").addEventListener('click', function() {
     op = "+"
-    displayOperador.innerHTML = `Operador: ${op}`
+    displayOperador.innerHTML = `Operador: +`
     return op 
 })
 
@@ -147,6 +147,7 @@ function reset() { //função para resetar os valores após a operação
     displayDigito1.innerHTML = `Digito 1: 0`
     displayDigito2.innerHTML = `Digito 2: 0`
     displayOperador.innerHTML = `Operador: +`
+    displayResultado.innerHTML = `Resultado: 0`
     return number1, number2, op
 }
 
@@ -157,25 +158,25 @@ document.querySelector("#operadores > #calcular").addEventListener('click', func
             resultado = number1 * number2
             console.log(resultado)
             displayResultado.innerHTML = `Resultado: ${resultado}`
-            reset()
+            novoDigito1()
             break;
         case "+":
             resultado = number1 + number2
             console.log(resultado)
             displayResultado.innerHTML = `Resultado: ${resultado}`
-            reset()
+            novoDigito1()
             break;
         case "-":
             resultado = number1 - number2
             console.log(resultado)
             displayResultado.innerHTML = `Resultado: ${resultado}`
-            reset()
+            novoDigito1()
             break;
         case "/":
             resultado = number1 / number2
             console.log(resultado)
             displayResultado.innerHTML = `Resultado: ${resultado}`
-            reset()
+            novoDigito1()
             break
         default:
             
@@ -185,15 +186,11 @@ document.querySelector("#operadores > #calcular").addEventListener('click', func
 })
 
 //botão de reset
-document.querySelector("#operadores > #reset").addEventListener('click', function() {
-    number1 = 0
-    number2 = 0
-    op = "+"
-    displayDigito1.innerHTML = `Digito 1: 0`
-    displayDigito2.innerHTML = `Digito 2: 0`
-    displayOperador.innerHTML = `Operador: +`
-    displayResultado.innerHTML = `Resultado: 0`
-    return number1, number2, op
-})
+document.querySelector("#operadores > #reset").addEventListener('click', reset)
+
+function novoDigito1() { //quando fizer a operação, o resultado dessa operação vai ser o novo digito1
+    number1 = resultado
+    displayDigito1.innerHTML = `Digito 1: ${number1}`
+}
 
 

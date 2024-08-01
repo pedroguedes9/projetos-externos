@@ -24,6 +24,7 @@
                 bottom: 140px;
                 width: 120px;
             }
+            
             div#operadores {
                 position: relative;
                 bottom: 265px;
@@ -31,7 +32,7 @@
             }
             div#display {
                 position: relative;
-                bottom: 280px;
+                bottom: 240px;
             }
             button {
                 height: 35px;
@@ -50,6 +51,20 @@
                 right: 4px;
                 top: 10px;
             }
+            h2#digito1 {
+                position:relative;
+                right: 128px;
+                top: 57px;
+            }
+            h2#digito2 {
+                position:relative;
+                left: 120px;
+                bottom: 140px;
+            }
+            h1 {
+                position:relative;
+                top: 60px;
+            }
         }
         @media screen and (min-width:640px ) {
             *{
@@ -62,16 +77,16 @@
             div#digitos1 {
                 position: relative;
                 right: 200px;
-                
+                bottom: 70px;                
             }
             div#digitos2 {
                 position: relative;
                 left: 200px;
-                bottom: 200px;
+                bottom: 270px;
             }
             div#operadores {
                 position: relative;;
-                bottom: 370px;
+                bottom: 440px;
             }
             button {
                 height: 50px;
@@ -86,11 +101,24 @@
             }
             h1, h2{
                 text-align: center;
-
+            }
+            h2#digito1 {
+                position:relative;
+                right: 206px;
+                bottom: 10px;
+            }
+            h2#digito2 {
+                position:relative;
+                left: 195px;
+                bottom: 57px;
             }
             div#display {
                 position: relative;
-                bottom: 350px;
+                bottom: 430px;
+            }
+            h1 {
+                position:relative;
+                top: 10px;
             }
         }
     </style>
@@ -98,7 +126,8 @@
 
 <body>
     <h1>calculadora</h1>
-
+    <h2 id="digito1">Digito 1: 0</h2>
+    <h2 id="digito2">Digito 2: 0</h2>
     <div class="digitos" id="digitos1">
         <button id="number1">1</button>
         <button id="number2">2</button>
@@ -133,8 +162,6 @@
         <button id="reset">C</button>
     </div>
     <div id="display">
-        <h2 id="digito1">Digito 1: 0</h2>
-        <h2 id="digito2">Digito 2: 0</h2>
         <h2 id="operador">Operador: +</h2>
         <h2 id="resultado">Resultado: 0</h2>
     </div>
