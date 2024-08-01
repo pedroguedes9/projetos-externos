@@ -13,14 +13,20 @@
         }
         div#digitos1 {
             float: left;
+            position: absolute;
+            left: 35%;
         }
         div#digitos2 {
             float: right;
+            position: absolute;
+            right: 35%;
         }
         button {
             height: 50px;
             width: 50px;
-
+        }
+        h1, h2{
+            text-align: center;
         }
 
     </style>
@@ -58,10 +64,11 @@
         <button id="multiplicar">*</button>
         <button id="div">/</button>
         <button id="minus">-</button>
-        <button id="more">+</button>
+        <button id="plus">+</button>
         <button id="calcular">calcular</button>
         <button id="reset">reset</button>
     </div>
+    <h2 id="resultado">Resultado: 0</h2>
         <script src="script.js"></script>
 </body>
 
