@@ -168,12 +168,13 @@ function reset() { //função para resetar os valores após a operação
     number1 = 0
     number2 = 0
     op = "+"
+    resultado = 0
     displayDigito1.innerHTML = `Digito 1: 0`
     displayDigito2.innerHTML = `Digito 2: 0`
     displayOperador.innerHTML = `Operador: +`
     displayResultado.innerHTML = `Resultado: 0`
     Calculo()
-    return number1, number2, op
+    return number1, number2, op, resultado
 }
 
 //calculo que acontece depois do click no botão de calcular
