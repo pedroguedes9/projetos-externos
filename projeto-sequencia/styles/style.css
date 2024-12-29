@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+div#test-sequence{
+    height: 100px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div#test-sequence > form {
+ 
+    height: 100%;
+    width: 100%;
+}
+
+div#test-sequence > form > input.sequence-number{
+    border: 1px solid black;
+    height: 50%;
+    width: 50px;
+    overflow: none;
+}
+
+input.sequence-number {
+    text-align: center;
+    
+}
+div.history-sequence {
+    display: block;
+}
+
+p.history-numbers {
+    border: 2px solid black;
+    display: inline-block;
+}
