@@ -30,6 +30,10 @@ input.sequence-number {
     text-align: center;
     
 }
+p#error {
+    display: none;
+    color: red;
+}
 h2 {
     margin-top: 50px;
     text-align: start;
