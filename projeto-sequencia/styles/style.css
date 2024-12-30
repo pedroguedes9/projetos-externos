@@ -19,14 +19,14 @@ div#test-sequence > form {
     width: 100%;
 }
 
-div#test-sequence > form > input.sequence-number{
+div#test-sequence > form > input.input-sequence{
     border: 1px solid black;
     height: 50%;
     width: 50px;
     overflow: none;
 }
 
-input.sequence-number {
+input.input-sequence {
     text-align: center;
     
 }
@@ -38,11 +38,30 @@ h2 {
     margin-top: 50px;
     text-align: start;
 }
+
+div#information {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+div#history {
+    flex: 1;
+    text-align: left;
+}
+
+div#win {
+    flex: 1;
+    text-align: right;
+}
+
 div#history > div {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 10px; 
+    justify-self: left;
 }
 
 div#history-sequence, div#result-sequence{
@@ -63,6 +82,7 @@ p.history-numbers {
 p.history-result {
     display: inline-block;
 }
+
 
 
 
