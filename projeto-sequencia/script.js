@@ -55,7 +55,7 @@ document.querySelector("#sequence-form").addEventListener("submit", event => {
 
         checkSequence();
         debug()
-        resultSequence.innerHTML += `<p class="history-result"> NÚMEROS CORRETOS: ${correctNumbers} POSIÇÕES CORRETAS: ${correctPositions} </p>`
+        resultSequence.innerHTML += `<p class="history-result"> NÚMEROS CORRETOS: <strong>${correctNumbers}</strong> POSIÇÕES CORRETAS:<strong> ${correctPositions}</strong> </p>`
     }  
     else {
         document.querySelector("#error").style.display = 'block';
