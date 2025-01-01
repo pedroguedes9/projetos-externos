@@ -7,7 +7,7 @@ let correctPositions = 0
 let times = 0
 
 generateSequence()
-
+debug()
 //events
 document.querySelector("#sequence-form").addEventListener("submit", event => {
     sequenceString = document.querySelectorAll(".input-sequence")
@@ -38,6 +38,7 @@ document.querySelector("#sequence-form").addEventListener("submit", event => {
         let historySequence = document.createElement("div");
         let resultSequence = document.createElement("div");
 
+        historyContainer.id = "history-container";
         historySequence.id = "history-sequence";
         resultSequence.id = "result-sequence";
         
@@ -59,10 +60,27 @@ document.querySelector("#sequence-form").addEventListener("submit", event => {
     else {
         document.querySelector("#error").style.display = 'block';
     }
-    if (correctPositions === 3 && correctNumbers === 3) {
-        document.querySelector("#win").style.display = 'block';
-    }
+    winVerify()
 });
+document.querySelectorAll("#reset-button").forEach(button => {
+    button.addEventListener("click", () => {
+        location.reload()
+    })
+})
+document.querySelector("#rules-button").addEventListener("click", event => {
+    event.preventDefault()
+    
+    if(document.querySelector("#rules").style.display == "block"){
+        document.querySelector("#rules").style.display = "none"
+        document.querySelector("#rules-button").textContent = "Mostrar regras"  
+    } else {
+        document.querySelector("#rules").style.display = "block"
+        document.querySelector("#rules-button").textContent = "Esconder regras"
+    }
+
+    
+})
+
 
 //functions
 function randomNumberGenerator(min, max) {
@@ -105,3 +123,37 @@ function debug() {
     console.log(`correctNumbers: ${correctNumbers}`)
     console.log(`correctPositions: ${correctPositions}`) 
 }
+
+function winVerify() {
+    if (correctPositions === 3 && correctNumbers === 3 && times <=13) {
+        document.querySelector("#win").style.display = 'block';
+        document.querySelectorAll(".input-sequence").forEach(input => {
+            input.style.backgroundColor = "green" 
+        })
+        document.querySelector("#submit").style.display = "none"
+        document.querySelector("#history-container").style.backgroundColor = "green"
+
+        
+    }
+
+    else if(correctPositions == 0 && correctNumbers==0 && times < 13){
+        document.querySelectorAll(".input-sequence").forEach(input => {
+            input.style.backgroundColor = "red" 
+        })
+        
+    }
+
+    else if(correctNumbers > 0 && correctNumbers <=3 && correctPositions >= 0 && correctPositions <3 && times < 13){
+        document.querySelectorAll(".input-sequence").forEach(input => {
+            input.style.backgroundColor = "yellow" 
+        })
+        
+    }
+
+    else{
+        document.querySelector("#submit").style.display = "none" 
+        document.querySelector("#defeat").style.display = "block"
+    }
+
+}
+

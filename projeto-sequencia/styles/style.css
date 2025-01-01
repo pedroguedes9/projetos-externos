@@ -4,7 +4,29 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
 }
+#rules{
+    display: none;
+    align-items:center;
+    margin: auto;
+    text-align: left;
+    
+    
+}
+#rules-button {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
 
+#rules-button:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
 div#test-sequence{
     height: 100px;
     width: 50%;
@@ -19,13 +41,16 @@ div#test-sequence > form {
     width: 100%;
 }
 
-div#test-sequence > form > input.input-sequence{
+div#test-sequence > form > div#inputs > input.input-sequence{
     border: 1px solid black;
-    height: 50%;
+    height: 100%;
     width: 50px;
     overflow: none;
 }
-
+div#inputs{
+    height: 50%;
+    margin-bottom: 20px;
+}
 input.input-sequence {
     text-align: center;
     
@@ -39,24 +64,59 @@ h2 {
     text-align: start;
 }
 
-div#information {
+
+div#win {
+    display: none;
+    
+}
+
+div#win > div#win-content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
+div#win h3 {
+    color: green;
+    font-size: 30px;
+}
+div#win img, div#defeat img {
+    width: 300px;
+    height: 200px;
+}
+#reset-button {
+    margin-top: 20px;
     padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#reset-button:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+div#defeat {
+    display: none;
+}
+div#defeat-content {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+div#defeat h3 {
+    color: red;
+    font-size: 30px;
 }
 
 div#history {
-    flex: 1;
     text-align: left;
+    
 }
-
-div#win {
-    flex: 1;
-    text-align: right;
-}
-
-div#history > div {
+div#history > div#history-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -82,6 +142,22 @@ p.history-numbers {
 p.history-result {
     display: inline-block;
 }
+
+#submit{
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#submit:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+
 
 
 
