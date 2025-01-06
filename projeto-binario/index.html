@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto-binário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Conversor de binário</h1>
+    <form id="formRadio">
+        <input type="radio" name="opChoice" id="binToDec" value="binToDec" checked>
+        <label for="binToDec">Binário para Decimal</label>
+
+
+        <input type="radio" name="opChoice" id="decToBin" value="decToBin">
+        <label for="decToBin">Decimal para Binário</label>
+    </form>
+
+    <form id="formValue">
+        <textarea name="value" id="inputValue" placeholder="Digite o valor"></textarea>
+        <input type="button" value="Converter" id="convertButton">
+    </form>
+    <h3 id="result">Resultado: </h3>
+</body>
+<script src="script.js"></script>
+</html>
