@@ -45,7 +45,7 @@ document.querySelector("#copyButton").addEventListener("click", event => {
 })
 
 //functions
-function conversionChoice(choice, valueString) {
+function conversionChoice(choice, valueString) { //função concat
     console.log(valueString)
     let valueTrim = valueString.trim()
     console.log(valueTrim)
