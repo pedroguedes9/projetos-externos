@@ -4,11 +4,16 @@ const resultElement = document.querySelector("#result")
 
 
 let bin = []
-let result = []
+let resultBin = []
+let resultDec 
+let stringResult 
+let valueNumber 
+let numberResult = 0
 
 //events
 document.querySelector("#formRadio").addEventListener("change", () => {
     inputElement.value = ""
+    resultElement.value = ""
     if(inputElement.placeholder === "Digite o valor Binário") {
         inputElement.placeholder = "Digite o valor Decimal"
     }
@@ -46,33 +51,51 @@ document.querySelector("#copyButton").addEventListener("click", event => {
 
 //functions
 function conversionChoice(choice, valueString) { //função concat
-    console.log(valueString)
-    let valueTrim = valueString.trim()
-    console.log(valueTrim)
-    let valueNumber = Number(valueTrim)
+    stringResult = ""
+    for (let i = 0; i < valueString.length; i++) {
+        if(valueString[i] !== " ") {
+            stringResult += valueString[i]
+        }
+    }
+
+    console.log(stringResult)
     if(choice == "decToBin") {
-        result = decToBin(valueNumber)
+        resultBin = decToBin(stringResult)
+        console.log(resultBin)
+        resultElement.textContent = `${resultBin.join("").toString()}`;
+        console.log(typeof resultBin.toString())
         
     }
     else{
-        result = binToDec(valueNumber)
-        
+        resultDec = binToDec(stringResult)
+        resultElement.textContent = `${resultDec}`;
     }
-    resultElement.textContent = `${result.join("")}`;
 }
 
 
 function decToBin(value) {
+    valueNumber = Number(value)
     let bin = [];
     while(value > 0){
         bin.unshift(value % 2);
         value = Math.floor(value / 2); 
     }
+    console.log(bin)
     return bin
     
 }
 
 function binToDec(value){
+    valueArray = value.split('')
+    valueArray.reverse()
     
+    for(let i=0; i<valueArray.length;i++){
+        if(valueArray[i] === '1'){
+            numberResult += 2**i
+        }
+    }
+    
+    console.log(numberResult)
+    return numberResult
 }
 
