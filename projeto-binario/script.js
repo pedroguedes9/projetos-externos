@@ -13,7 +13,6 @@ let numberResult = 0
 //events
 document.querySelector("#formRadio").addEventListener("change", () => {
     inputElement.value = ""
-    resultElement.value = ""
     if(inputElement.placeholder === "Digite o valor Binário") {
         inputElement.placeholder = "Digite o valor Decimal"
     }
