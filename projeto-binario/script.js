@@ -3,31 +3,38 @@ const inputElement = document.querySelector("#inputValue")
 const resultElement = document.querySelector("#result")
 
 
+let choice = document.querySelector("input[name='opChoice']:checked").value
 let bin = []
-let resultBin = []
-let resultDec 
 let stringResult 
 let valueNumber 
 let numberResult = 0
+
 
 //events
 document.querySelector("#formRadio").addEventListener("change", () => {
     inputElement.value = ""
     resultElement.value = ""
-    if(inputElement.placeholder === "Digite o valor Binário") {
-        inputElement.placeholder = "Digite o valor Decimal"
-    }
-    else{
-        inputElement.placeholder = "Digite o valor Binário"
-        
+    inputElement.placeholder = inputElement.placeholder === "Digite o valor Binário" ? "Digite o valor Decimal" : "Digite o valor Binário"
+})
+
+
+document.querySelector("#convertButton").addEventListener("click", event => { 
+    resultElement.value = ""
+    const value = inputElement.value
+    choice = document.querySelector("input[name='opChoice']:checked").value
+    stringResult = "";
+    errorTest(value)
+    if(!errorTest){
+        return
     }
     
+    for (let i = 0; i < value.length; i++) {
+        if (value[i] !== " ") {
+            stringResult += value[i];
+        }
+    }
 
-})
-document.querySelector("#convertButton").addEventListener("click", event => { 
-    const value = inputElement.value
-    let conversion = document.querySelector("input[name='opChoice']:checked").value
-    conversionChoice(conversion, value)
+    conversionChoice(choice, stringResult)
     
 })
 document.querySelector("#copyButton").addEventListener("click", event => {
@@ -50,26 +57,8 @@ document.querySelector("#copyButton").addEventListener("click", event => {
 })
 
 //functions
-function conversionChoice(choice, valueString) { //função concat
-    stringResult = ""
-    for (let i = 0; i < valueString.length; i++) {
-        if(valueString[i] !== " ") {
-            stringResult += valueString[i]
-        }
-    }
-
-    console.log(stringResult)
-    if(choice == "decToBin") {
-        resultBin = decToBin(stringResult)
-        console.log(resultBin)
-        resultElement.textContent = `${resultBin.join("").toString()}`;
-        console.log(typeof resultBin.toString())
-        
-    }
-    else{
-        resultDec = binToDec(stringResult)
-        resultElement.textContent = `${resultDec}`;
-    }
+function conversionChoice(choice, stringResult) { 
+    resultElement.value = choice === "decToBin" ? `${decToBin(stringResult).join("")}` : `${binToDec(stringResult)}`
 }
 
 
@@ -86,6 +75,7 @@ function decToBin(value) {
 }
 
 function binToDec(value){
+    numberResult = 0
     valueArray = value.split('')
     valueArray.reverse()
     
@@ -99,3 +89,28 @@ function binToDec(value){
     return numberResult
 }
 
+function isBinary(input){
+    for(let char of input){
+        if(char !== '0' && char !== '1'){
+            return false
+        }
+    }
+    return true
+}
+function errorTest (value) {
+    if(!isNumeric(value)) {
+        alert('Só aceita números');
+        inputElement.value = "";
+        return false
+    }
+    else if(choice === 'binToDec' && isBinary(value) == false){
+        alert('Só aceita 0 e 1')
+        inputElement.value = ""
+        return false
+    }
+
+    return true
+}
+function isNumeric(value) {
+    return !isNaN(value) && value.trim() !== ""; // Verifica se é um número válido
+}
