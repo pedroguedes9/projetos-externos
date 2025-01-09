@@ -74,7 +74,7 @@ function decToBin(value) {
     
 }
 
-function binToDec(value){
+function binToDec(value){ //FALTA COLOCAR O TRATAMENTO PARA ESPAÇOS EM BRANCO
     numberResult = 0
     valueArray = value.split('')
     valueArray.reverse()
@@ -97,6 +97,8 @@ function isBinary(input){
     }
     return true
 }
+
+
 function errorTest (value) {
     if(!isNumeric(value)) {
         alert('Só aceita números');
