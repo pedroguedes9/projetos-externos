@@ -14,10 +14,16 @@ let numberResult = 0
 document.querySelector("#formRadio").addEventListener("change", () => {
     inputElement.value = ""
     resultElement.value = ""
-    inputElement.placeholder = inputElement.placeholder === "Digite o valor Binário" ? "Digite o valor Decimal" : "Digite o valor Binário"
+    if(inputElement.placeholder === "Digite o valor Binário") {
+        inputElement.placeholder = "Digite o valor Decimal"
+    }
+    else{
+        inputElement.placeholder = "Digite o valor Binário"
+        
+    }
+    
+
 })
-
-
 document.querySelector("#convertButton").addEventListener("click", event => { 
     resultElement.value = ""
     const value = inputElement.value
