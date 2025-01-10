@@ -153,6 +153,10 @@ function winVerify() {
     else{
         document.querySelector("#submit").style.display = "none" 
         document.querySelector("#defeat").style.display = "block"
+        for (let i = 0; i<3; i++) {
+            document.getElementsByClassName('id')[i].textContent = `${keySequence[i]}`
+            
+        }
     }
 
 }

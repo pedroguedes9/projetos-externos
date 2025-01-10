@@ -4,7 +4,7 @@ const resultElement = document.querySelector("#result")
 
 
 let choice = document.querySelector("input[name='opChoice']:checked").value
-let bin = []
+let binaryArray = []
 let stringResult 
 let valueNumber 
 let numberResult = 0
@@ -26,17 +26,18 @@ document.querySelector("#formRadio").addEventListener("change", () => {
 })
 document.querySelector("#convertButton").addEventListener("click", event => { 
     resultElement.value = ""
-    const value = inputElement.value
+    const value = inputElement.value.replace(/\s+/g, "")
     choice = document.querySelector("input[name='opChoice']:checked").value
     stringResult = "";
-    errorTest(value)
-    if(!errorTest){
-        return
+    
+    
+    if(!errorTest(value)){
+        return 
     }
     
     for (let i = 0; i < value.length; i++) {
         if (value[i] !== " ") {
-            stringResult += value[i];
+            stringResult += value[i];   
         }
     }
 
@@ -70,13 +71,13 @@ function conversionChoice(choice, stringResult) {
 
 function decToBin(value) {
     valueNumber = Number(value)
-    let bin = [];
+    let binaryArray = [];
     while(value > 0){
-        bin.unshift(value % 2);
+        binaryArray.unshift(value % 2);
         value = Math.floor(value / 2); 
     }
-    console.log(bin)
-    return bin
+    console.log(binaryArray)
+    return binaryArray
     
 }
 
@@ -109,13 +110,15 @@ function errorTest (value) {
     if(!isNumeric(value)) {
         alert('Só aceita números');
         inputElement.value = "";
+        
         return false
     }
-    else if(choice === 'binToDec' && isBinary(value) == false){
+    if(choice === 'binToDec' && isBinary(value) == false){
         alert('Só aceita 0 e 1')
         inputElement.value = ""
         return false
     }
+    
 
     return true
 }
