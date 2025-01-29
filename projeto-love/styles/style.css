@@ -12,6 +12,10 @@ body{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    background-image: url("love.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+
 }
 div#contador{
     display: grid;
