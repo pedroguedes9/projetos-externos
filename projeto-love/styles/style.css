@@ -5,33 +5,67 @@
     box-sizing: border-box;
 }
 body{
-    font-family: Arial, sans-serif;
+    font-family: "Playwrite IN", serif;
     background-color: black;
     color: white;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    background-image: url("love.jpg");
-    background-repeat: no-repeat;
-    background-position: top center;
-
+    background-image: url("freepik__um-fundo-preenchido-com-vrios-formatos-de-coraes-v__15968.jpeg");
+    background-size: cover;
+}
+body img {
+    width: 300px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 5px;
+}
+body p#texto{
+    width: 90%;
+    text-align: justify;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.725);
+    background-color: rgba(0, 0, 0, 0.697);
+    border-radius: 10px;
+    padding: 5px;
 }
 div#contador{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
-    background-color: black;
-    height: 150px;
-    width: 300px;
+    height: 190px;
+    width: 330px;
     margin: 50px;
 }
+
 div.tempo {
-    background-color: white;
+    background-color: #fd0000;
+    border-radius: 10%;
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
     font-weight: 700;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.725);
+}
+button#clique {
+    background-color: #fd0000;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    padding: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.725);
+    margin-bottom: 20px;
+
+    
+}
+button#clique:active {
+    background-color: #000000;
+}
+p#recado{
+    display: none;
+    margin-bottom: 25px;
+    text-align: center;
 }
