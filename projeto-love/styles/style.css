@@ -12,7 +12,7 @@ body{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    background-image: url("freepik__um-fundo-preenchido-com-vrios-formatos-de-coraes-v__15968.jpeg");
+    background-image: url("fundo.jpeg");
     background-size: cover;
 }
 body img {
@@ -20,6 +20,20 @@ body img {
     height: 500px;
     margin: 10px;
     border-radius: 5px;
+}
+audio {
+    margin: 10px;
+}
+audio::-webkit-media-controls-panel {
+    background-color: #fd0000;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.725);
+}
+audio::-webkit-media-controls-current-time-display {
+    color: white;
+}
+audio::-webkit-media-controls-time-remaining-display {
+    color: white;
 }
 body p#texto{
     width: 90%;
