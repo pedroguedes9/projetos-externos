@@ -1,0 +1,117 @@
+:root {
+    --primary-color: #4a6cf7;
+    --secondary-color: #6574cd;
+    --background-color: #f8fafc;
+    --text-color: #2d3748;
+    --border-color: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  
+  h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  textarea {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+  }
+  
+  button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  .loading-indicator {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .resposta-container {
+    display: none;
+    padding: 1.5rem;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+  
+  #resposta-texto {
+    white-space: pre-wrap;
+    line-height: 1.8;
+  }
+  
+  #fontes-container {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+  }
+  
+  #fontes-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .fonte-item {
+    background-color: #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    font-size: 0.9rem;
+  }
+  

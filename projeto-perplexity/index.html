@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistente Perplexity AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Assistente Perplexity AI</h1>
+    
+    <div class="search-container">
+      <textarea id="pergunta" placeholder="Digite sua pergunta aqui..."></textarea>
+      <button id="enviar">Enviar</button>
+    </div>
+    
+    <div class="loading-indicator" id="loading">
+      <div class="spinner"></div>
+      <p>Processando sua pergunta...</p>
+    </div>
+    
+    <div class="resposta-container" id="resposta-container">
+      <h2>Resposta:</h2>
+      <div id="resposta-texto"></div>
+      <div id="fontes-container">
+        <h3>Fontes:</h3>
+        <div id="fontes-lista"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
