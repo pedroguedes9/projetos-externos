@@ -50,7 +50,6 @@ function atualizar() {
         anos--;
     }
     if (anos === 0) {
-        
         display[0].parentNode.style.opacity = opacity
     }
 

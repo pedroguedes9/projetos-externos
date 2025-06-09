@@ -62,7 +62,6 @@ div.tempo {
     flex-flow: column nowrap;
     font-weight: 700;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.725);
-    
 }
 button#clique {
     background-color: #fd0000;
