@@ -26,7 +26,7 @@ function atualizar() {
     minutos = agora.getMinutes() - dataPedido.getMinutes()
     segundos = agora.getSeconds() - dataPedido.getSeconds()
 
-    opacity = 0 + ((meses - 2) * 0.1)
+    opacity += ((meses - 2) * 0.1)
 
     if (segundos < 0) {
         segundos += 60;
