@@ -51,6 +51,7 @@ function atualizar() {
     }
     if (anos === 0) {
         display[0].parentNode.style.opacity = opacity
+        console.log(display[0].parentNode.style.opacity)
     }
 
 
