@@ -2,7 +2,7 @@ const dataPedido = new Date(2025, 0, 4, 15, 0, 0)
 let agora, tempoDecorrido, anos, meses, dias, horas, minutos, segundos
 let display = Array.from(document.querySelectorAll(".display"))
 let tempo = []
-let opacity = 0
+let opacity 
 let recado = document.querySelector("#recado")
 console.log(display)
 console.log(dataPedido)
@@ -26,7 +26,7 @@ function atualizar() {
     minutos = agora.getMinutes() - dataPedido.getMinutes()
     segundos = agora.getSeconds() - dataPedido.getSeconds()
 
-    opacity += ((meses - 2) * 0.1)
+    opacity = ((meses - 2) * 0.1)
 
     if (segundos < 0) {
         segundos += 60;
@@ -51,8 +51,8 @@ function atualizar() {
     }
     if (anos === 0) {
         display[0].parentNode.style.opacity = opacity
-        //teste
     }
+
 
     tempo = [anos, meses, dias, horas, minutos, segundos]
     tempo.forEach((valor, i) => {
