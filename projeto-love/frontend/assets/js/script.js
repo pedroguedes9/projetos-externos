@@ -4,8 +4,19 @@ let display = Array.from(document.querySelectorAll(".display"))
 let tempo = []
 let opacity 
 let recado = document.querySelector("#recado")
+const body = document.querySelector("body")
+const nav = document.querySelector(".nav")
 console.log(display)
 console.log(dataPedido)
+document.querySelector(".hamburger").addEventListener("click", () => {
+    nav.classList.toggle("active")
+    if (body.style.overflow === "hidden")  {
+        body.style.overflow = "auto"
+    }
+    else {
+        body.style.overflow = "hidden"
+    }
+})
 document.querySelector("#clique").addEventListener("click", clique => {
     if(getComputedStyle(recado).display === "none") {
         recado.style.display = "block"
@@ -13,6 +24,7 @@ document.querySelector("#clique").addEventListener("click", clique => {
         recado.style.display = "none"
     }
 })
+
 function atualizar() {
     agora = new Date()
     tempoDecorrido = agora - dataPedido
