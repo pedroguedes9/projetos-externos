@@ -5,18 +5,24 @@ let tempo = []
 let opacity 
 let recado = document.querySelector("#recado")
 const body = document.querySelector("body")
+const audio = document.querySelector(".audio") 
 const nav = document.querySelector(".nav")
 console.log(display)
 console.log(dataPedido)
 document.querySelector(".hamburger").addEventListener("click", () => {
-    nav.classList.toggle("active")
-    if (body.style.overflow === "hidden")  {
-        body.style.overflow = "auto"
+    nav.classList.toggle("active"); // Alterna a classe 'active' na navegação
+
+    // Verifica se a navegação AGORA tem a classe 'active'
+    if (nav.classList.contains("active")) {
+        // Se a navegação está ativa (aberta)
+        body.style.overflow = "hidden"; // Impede a rolagem do corpo
+        audio.style.zIndex = -1;       // Coloca o áudio atrás de outros elementos
+    } else {
+        // Se a navegação não está ativa (fechada)
+        body.style.overflow = "auto";  // Permite a rolagem do corpo
+        audio.style.zIndex = 1;        // Traz o áudio para a frente novamente
     }
-    else {
-        body.style.overflow = "hidden"
-    }
-})
+});
 document.querySelector("#clique").addEventListener("click", clique => {
     if(getComputedStyle(recado).display === "none") {
         recado.style.display = "block"

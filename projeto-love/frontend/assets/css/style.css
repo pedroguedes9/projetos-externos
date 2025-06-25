@@ -24,6 +24,8 @@ body img {
 }
 audio {
     margin: 10px;
+    position: relative;
+    transition: 0.5s
 }
 audio::-webkit-media-controls-panel {
     background-color: #fd0000;
@@ -93,7 +95,7 @@ body p#texto{
     background: white;
     margin-top: 5px;
     position: relative;
-    transition: 0.3s;
+    transition: 1s 1s;
 }
 @media (max-width: 750px) {
     .hamburger {
@@ -123,9 +125,6 @@ body p#texto{
         padding-block: 20px;
         opacity: 0;
     }  
-    .nav-list.active body {
-        overflow: hidden;
-    }
     .nav-list li:nth-child(1) a {
         transition: 0.5s 0.2s;
     }
@@ -159,9 +158,6 @@ body p#texto{
         pointer-events: all;
     }
 
-    audio {
-        z-index: -1;
-    }
 }
 div#contador{
     display: grid;
