@@ -16,10 +16,12 @@ document.querySelector(".hamburger").addEventListener("click", () => {
     if (nav.classList.contains("active")) {
         // Se a navegação está ativa (aberta)
         body.style.overflow = "hidden"; // Impede a rolagem do corpo
+        audio.style.transition = "z-index 0s"
         audio.style.zIndex = -1;       // Coloca o áudio atrás de outros elementos
     } else {
         // Se a navegação não está ativa (fechada)
         body.style.overflow = "auto";  // Permite a rolagem do corpo
+        audio.style.transition = "z-index 3s"
         audio.style.zIndex = 1;        // Traz o áudio para a frente novamente
     }
 });

@@ -25,7 +25,6 @@ body img {
 audio {
     margin: 10px;
     position: relative;
-    transition: 0.5s
 }
 audio::-webkit-media-controls-panel {
     background-color: #fd0000;
@@ -95,7 +94,7 @@ body p#texto{
     background: white;
     margin-top: 5px;
     position: relative;
-    transition: 1s 1s;
+    transition: 0.3s;
 }
 @media (max-width: 750px) {
     .hamburger {
@@ -111,12 +110,11 @@ body p#texto{
         background-color: rgba(175, 0, 9, 0.959);
         clip-path: circle(100px at 90% -15%);
         transition: 1s ease-in-out;
-        
 
         flex-flow: column nowrap;
         justify-content: space-around;
         align-items: center;
-        gap: 0px;
+        gap: -2px;
         pointer-events: none;
 
     }
