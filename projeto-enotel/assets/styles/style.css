@@ -4,15 +4,13 @@
     padding: 0px;
     box-sizing: border-box;
 }
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 div.main-pic {
+    scroll-snap-align: center;
     background-image: url(images/enotel-main-pic.avif);
     background-position: center center;
     background-size: cover;
@@ -28,8 +26,7 @@ div.main-pic {
 div.countdown {
     width: min(90%, 700px);
     height: 45%;
-    background-color: rgba(172, 171, 171, 0.829);
-    border: solid rgb(255, 255, 255) 3px;
+    background-color: rgba(172, 171, 171, 0.205);
     text-align: center;
     border-radius: 10px;
     position: relative;
@@ -37,6 +34,11 @@ div.countdown {
     flex-flow: column nowrap;
     align-items: center;
     gap: 30px;
+    backdrop-filter: blur(2px);
+    box-shadow: 4px 5px 7px 0px rgba(0, 0, 0, 0.425);
+}
+h1.titulo {
+    text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.425);
 }
 div.countdown-bar {
     height: 10%;
@@ -52,6 +54,7 @@ div.progress-bar {
     background-color: red;
 }
 div.second-pic {
+    scroll-snap-align: center;
     background-image: url(images/second-pic.jpg);
     background-size: cover;
     background-position: center center;
@@ -67,6 +70,7 @@ i.arrow-down {
     background-color:rgba(172, 171, 171, 0.829) ;
 }
 div.third-pic {
+    scroll-snap-align: center;
     background-image: url(images/third-pic.jpg);
     background-size: cover;
     background-position: center center;
@@ -75,6 +79,7 @@ div.third-pic {
     height: 90vh;
 }
 div.fourth-pic {
+    scroll-snap-align: center;
     background-image: url(images/fourth-pic.jpg);
     background-size: cover;
     background-position: center center;
