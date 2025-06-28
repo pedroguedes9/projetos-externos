@@ -17,7 +17,7 @@ div.main-pic {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 90dvh;
+    height: 100dvh;
     display: grid;
     grid-template-rows: 1fr auto auto;
     place-items: center;
@@ -77,13 +77,15 @@ div.progress-bar {
     background-size: 200% 200%;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
     animation: gradientMove 4s linear infinite;
+    border-radius: 100px;
     transition: width 0.5s ease-in-out;
 }
 @keyframes gradientMove {
-    0%, 100% { background-position: 0% 50%; }
+    0% { background-position: 0% 50%; }
+    25% {background-position: 50% 100%;}
     50% { background-position: 100% 50%; }
+    100% {background-position: 50% 0%;}
 }
 div.second-pic {
     scroll-snap-align: center;
@@ -92,7 +94,7 @@ div.second-pic {
     background-position: center center;
     background-attachment: fixed;
     width: 100%;
-    height: 90dvh;
+    height: 100dvh;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -113,7 +115,7 @@ div.third-pic {
     background-position: center center;
     background-attachment: fixed;
     width: 100%;
-    height: 90dvh;
+    height: 100dvh;
     background-color: black;
     display: flex;
     flex-flow: column;
@@ -127,7 +129,7 @@ div.fourth-pic {
     background-position: center center;
     background-attachment: fixed;
     width: 100%;
-    height: 90dvh;
+    height: 100dvh;
     background-color: black;
     display: flex;
     flex-flow: column;
@@ -148,7 +150,7 @@ div.fourth-pic {
     font-size: 3rem;
     color: rgb(255, 255, 255);
     animation: bounce 2s infinite;
-    cursor: pointer;
+    cursor: auto;
     transition: transform 0.3s;
 }
 .arrow-icon:hover {

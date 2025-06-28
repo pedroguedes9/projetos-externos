@@ -39,26 +39,7 @@ function updateCountdown () {
 updateCountdown()
 setInterval(updateCountdown, 3600000)
 
-// Scroll suave forçado para as setas
-document.addEventListener('DOMContentLoaded', function() {
-    const arrowLinks = document.querySelectorAll('.arrow-wrapper a')
-    
-    arrowLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault() // Impede o comportamento padrão
-            
-            const targetId = this.getAttribute('href').substring(1) // Remove o #
-            const targetElement = document.getElementById(targetId)
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                })
-            }
-        })
-    })
-})
+
 
 
 
