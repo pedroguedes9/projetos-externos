@@ -1,1 +1,15 @@
 @charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+div.main-pic {
+    background-image: url(images/3d66b1_d8881be2eede481a826c5fd5dfdb5712~mv2.avif);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 90vh;
+}
