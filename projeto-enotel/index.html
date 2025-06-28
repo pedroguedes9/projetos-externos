@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viagem Enotel</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/style.css" />
     <script src="https://kit.fontawesome.com/57ceb1dffc.js" crossorigin="anonymous"></script>
-</head>
+    </head>
 <body>
     <main>
         <div class="main-pic">
-            <div class="countdown">
+            <div class="countdown" id="countdown">
                 <h1 class="titulo">Enotel Countdown</h1>
                 <div class="countdown-bar">
                     <div class="progress-bar"></div>
                 </div>
-                <h2 class="pct-countdown">0% concluído</h2>
-                <h4 class="days-left">Faltam 0 dias para a viagem</h4>
+            <h2 class="pct-countdown">0% concluído</h2>
+            <h3 class="days-left">Faltam 0 dias para a viagem</h3>
+            </div>
+
+        </div>
+        <div class="second-pic" id="first-anchor">
+            <div class="arrow-wrapper">
+                <a href="#countdown"><i class="fa-solid fa-chevron-up arrow-icon"></i></a>
+            </div>
+            <div class="arrow-wrapper">
+                <a href="#second-anchor"><i class="fa-solid fa-chevron-down arrow-icon"></i></a>
             </div>
         </div>
-        <div class="second-pic">
-            
-            
-            
+
+        <div class="third-pic" id="second-anchor">
+            <div class="arrow-wrapper">
+                <a href="#first-anchor"><i class="fa-solid fa-chevron-up arrow-icon"></i></a>
+            </div>
+            <div class="arrow-wrapper">
+                <a href="#third-anchor"><i class="fa-solid fa-chevron-down arrow-icon"></i></a>
+            </div>
         </div>
-            
-        
-        <div class="third-pic" ></div>
-        <div class="fourth-pic"></div>
+
+        <div class="fourth-pic" id="third-anchor">
+            <div class="arrow-wrapper">
+                <a href="#second-anchor"><i class="fa-solid fa-chevron-up arrow-icon"></i></a>
+            </div>
+            <div id="third-anchor"></div>
+        </div>
     </main>
 </body>
 <script src="assets/js/script.js"></script>
