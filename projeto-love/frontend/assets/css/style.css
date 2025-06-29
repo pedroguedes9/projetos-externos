@@ -20,11 +20,23 @@ body img {
     height: 500px;
     margin: 10px;
     border-radius: 5px;
+    border: 1px solid white;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.363);
+    transition: transform 0.3s ease-in-out;
     
+
+}
+body img:hover {
+    transform: scale(1.05);
 }
 audio {
     margin: 10px;
     position: relative;
+    transition: transform 0.3s;
+}
+audio:hover {
+    transform: scale(1.1);
+    
 }
 audio::-webkit-media-controls-panel {
     background-color: #fd0000;
@@ -81,8 +93,8 @@ body p#texto{
     padding: 15px;
 }
 .nav-list li {
-    transition: transform 0.3s ease-in-out, border-bottom 0.2s ease-in-out;
-    
+    transition: transform 0.3s ease-in-out, border-bottom 0.2s ease-in-out, background-color 0.3s ease-in-out;
+    border-radius: 10px 10px 0px 0px;
 }
 .nav-list li a::after {
     content: "";
@@ -97,7 +109,8 @@ body p#texto{
 }
 .nav-list li:hover {
     transform: scale(1.1);
-    
+    background-color: #0000004d;
+
 }
 .nav-list li:hover a::after {
     width: 100%;
@@ -202,6 +215,10 @@ div.tempo {
     flex-flow: column nowrap;
     font-weight: 700;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.725);
+    transition: transform 0.3s ease-in-out;
+}
+div.tempo:hover {
+    transform: scale(1.1);
 }
 button#clique {
     background-color: #fd0000;
@@ -212,12 +229,16 @@ button#clique {
     padding: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.725);
     margin-bottom: 20px;
+    cursor: pointer;
+    will-change: transform;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
 }
 button#clique:active {
     background-color: #000000;
 }
 button#clique:hover {
-    cursor: pointer;
+    transform: scale(1.1);
 }
 p#recado{
     display: none;
