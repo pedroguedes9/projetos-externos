@@ -21,14 +21,14 @@ function updateCountdown () {
     
     if (daysLeft <= 0) {
         daysLeft = 0
-        daysLeftDisplay.textContent = `A viagem chegou! \u{1F389}`
+        daysLeftDisplay.innerHTML = `<i class="fa-solid fa-suitcase-rolling"></i> A viagem chegou! \u{1F389}`
         pctCountdown = 100
     } else if (daysLeft === 1) {
-        daysLeftDisplay.textContent = `Falta ${daysLeft} dia para a viagem \u{1F389}`
+        daysLeftDisplay.innerHTML = `<i class="fa-solid fa-suitcase-rolling"></i> Falta ${daysLeft} dia para a viagem \u{1F389}`
     } else {
-        daysLeftDisplay.textContent = `Faltam ${daysLeft} dias para a viagem`
+        daysLeftDisplay.innerHTML = `<i class="fa-solid fa-suitcase-rolling"></i> Faltam ${daysLeft} dias para a viagem`
     }
-    pctCountdownDisplay.textContent = `${pctCountdown}% concluído`
+    pctCountdownDisplay.innerHTML = `${pctCountdown}% concluído <i class="fa-solid fa-circle-notch fa-spin"></i>`
     progressBar.style.width = `${pctCountdown}%`
 
     console.log(`📅 Dias restantes: ${daysLeft}`)

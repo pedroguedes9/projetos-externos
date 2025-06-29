@@ -48,7 +48,7 @@ div.countdown:hover {
 h1.titulo {
     text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.425);
     background-color: rgba(172, 171, 171, 0.384);
-    border-radius: 1px;
+    border-radius: 18px;
     backdrop-filter: blur(10px);
     width: 100%;
     border: 1px solid white;
@@ -63,7 +63,6 @@ h2.pct-countdown, h4.days-left {
     font-size: 1rem;
     opacity: 0.8;
 }
-
 div.countdown-bar {
     height: 3vh;
     min-height: 25px;
@@ -107,12 +106,6 @@ div.second-pic {
     justify-content: space-between;
     background-color: black;
 }
-div#anchor {
-    width: 100px;
-    height: 100px;
-    background-color: aliceblue;    
-}
-
 div.third-pic {
     scroll-snap-align: center;
     background-image: url(images/third-pic.jpg);
