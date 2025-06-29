@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@keyframes gradientMove {
+    0% { background-position: 100% 50% }
+    100% { background-position: 0% 50%; }
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
 * {
     margin: 0px;
     padding: 0px;
@@ -114,10 +126,7 @@ div.progress-bar {
     border-radius: 100px;
     transition: width 0.5s ease-in-out;
 }
-@keyframes gradientMove {
-    0% { background-position: 100% 50% }
-    100% { background-position: 0% 50%; }
-}
+
 div.second-pic {
     scroll-snap-align: center;
     background-image: url(images/second-pic.jpg);
@@ -181,12 +190,4 @@ div.fourth-pic {
 }
 .arrow-icon:hover {
     transform: scale(1.2);
-}
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
 }
