@@ -133,7 +133,7 @@ div.progress-bar {
 
 div.second-pic {
     scroll-snap-align: center;
-    background-image: url(images/second-pic.jpg);
+    background-image: url(images/second-pic.jpeg);
     background-size: cover;
     background-position: center center;
     background-attachment: scroll;
