@@ -8,7 +8,31 @@ html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom,
+        hsl(220, 100%, 50%),   /* Azul */
+        hsl(235, 100%, 55%),   /* Azul-roxo */
+        hsl(250, 100%, 50%),   /* Roxo-azul */
+        hsl(265, 100%, 50%),   /* Roxo */
+        hsl(280, 100%, 50%),   /* Roxo-magenta */
+        hsl(295, 100%, 55%),   /* Magenta-roxo */
+        hsl(300, 100%, 50%)    /* Purple final */
+    );
+    padding-top:1dvh;
+    padding-bottom: 1dvh;
+    height: 100%;
 
+}
+main {
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.356);
+    border: 1px solid white;
+    border-radius: 10px;
+}
 div.main-pic {
     scroll-snap-align: center;
     background-color: black;
@@ -18,10 +42,12 @@ div.main-pic {
     background-repeat: no-repeat;
     background-attachment: scroll;
     width: 100%;
-    height: 100dvh;
+    height: 99.9dvh;
     display: grid;
     grid-template-rows: 1fr auto auto;
     place-items: center;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
 }
 
 div.countdown {
@@ -133,6 +159,8 @@ div.fourth-pic {
     flex-flow: column;
     align-items: center;
     justify-content: space-between;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
 }
 .arrow-wrapper {
     width: 100%;
