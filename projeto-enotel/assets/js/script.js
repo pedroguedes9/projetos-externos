@@ -1,23 +1,30 @@
 const tripDate = new Date(2025, 11, 5)
 const totalWaitingTime = 295
+const totalWaitingTimeHours = totalWaitingTime * 24 //número de horas
 const tripTimestamp = tripDate.getTime()
 const daysLeftDisplay = document.querySelector(".days-left")
 const pctCountdownDisplay = document.querySelector(".pct-countdown")
 const progressBar = document.querySelector(".progress-bar")
-const msPerDay = 24 * 60 * 60 * 1000 // 86400000
+const msPerHour = 60 * 60 * 1000 // 3600000
 let daysLeft
 let pctCountdown
+let hoursLeft
 
 function updateCountdown () {
     let currentDate = new Date()
     let currentTimestamp = currentDate.getTime()
     daysLeftDisplay.textContent = `Calculando...`
 
-    // Converte milissegundos para dias e arredonda para cima
-    daysLeft = Math.ceil(((tripTimestamp - currentTimestamp) / msPerDay)) 
+    // Converte milissegundos para horas e arredonda para cima
+    hoursLeft = Math.ceil((tripTimestamp - currentTimestamp) / msPerHour)
+    // Converte horas para dias e arredonda para baixo (mais preciso)
+    daysLeft = Math.floor(hoursLeft / 24)
+
 
     // Garante que a porcentagem fique entre 0% e 100% 
-    pctCountdown = (((totalWaitingTime - daysLeft) / totalWaitingTime) * 100).toFixed(1)
+pctCountdown = Math.max(0, Math.min(100, 
+    ((totalWaitingTimeHours - hoursLeft) / totalWaitingTimeHours * 100)
+)).toFixed(2) // 2 casas decimais para ver mudanças menores
     
     if (daysLeft <= 0) {
         daysLeft = 0
@@ -34,6 +41,7 @@ function updateCountdown () {
     console.log(`📅 Dias restantes: ${daysLeft}`)
     console.log(`📊 Progresso: ${pctCountdown}%`)
     console.log(`🎯 Data da viagem: ${tripDate.toLocaleDateString('pt-BR')}`)
+    console.log(hoursLeft)
 }
 
 updateCountdown()
