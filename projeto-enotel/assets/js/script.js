@@ -18,7 +18,7 @@ function updateCountdown () {
     // Converte milissegundos para horas e arredonda para cima
     hoursLeft = Math.ceil((tripTimestamp - currentTimestamp) / msPerHour)
     // Converte horas para dias e arredonda para baixo (mais preciso)
-    daysLeft = Math.floor(hoursLeft / 24)
+    daysLeft = Math.ceil(hoursLeft / 24)
 
 
     // Garante que a porcentagem fique entre 0% e 100% 
