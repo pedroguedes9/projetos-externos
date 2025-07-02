@@ -145,6 +145,19 @@ div.second-pic {
     justify-content: space-between;
     background-color: black;
 }
+div.road-map {
+    height: 80%;
+    width: min(80%, 500px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    flex-flow: column nowrap;
+    }
 div.third-pic {
     scroll-snap-align: center;
     background-image: url(images/third-pic.jpg);
